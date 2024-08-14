@@ -7,4 +7,4 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/900f3c4c6c2c37d352cd/test_coverage)](https://codeclimate.com/github/DaniillGolovin/Task-Manager/test_coverage)
 
-[![Visit Website](https://img.shields.io/badge/Visit%20Website-Click%20Here-brightgreen)](https://php-laravel-developer-project-57-x5fo.onrender.com)
+[![Visit Website](https://img.shields.io/badge/Visit%20Website-Click%20Here-brightgreen)](http://213.171.6.21:8000)

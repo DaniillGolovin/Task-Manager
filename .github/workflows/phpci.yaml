@@ -44,7 +44,7 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           file: build/logs/clover.xml
-          fail_ci_if_error: true
+#          fail_ci_if_error: true
 
       - name: Publish code coverage
         uses: paambaati/codeclimate-action@v5.0.0
@@ -74,6 +74,24 @@ jobs:
         with:
           context: .
           push: true
-          cache-from: daniilgolovin/task-manager:latest
+          cache-from: ${{ secrets.DOCKER_USERNAME }}/task-manager:latest
           cache-to: type=inline
-          tags: daniilgolovin/task-manager:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/task-manager:latest
+
+      - name: Deploy to Server via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          port: ${{ secrets.SERVER_PORT }}
+          script_stop: true
+          script: |
+            docker stop task-manager-prod | true
+            docker rm task-manager-prod | true
+            docker pull ${{ secrets.DOCKER_USERNAME }}/task-manager:latest
+            docker run -d \
+            -p 8000:8000 \
+            --name task-manager-prod \
+            ${{ secrets.DOCKER_USERNAME }}/task-manager:latest
+            docker exec task-manager-prod make setup
