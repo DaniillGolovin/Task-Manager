@@ -1,25 +1,27 @@
 version: '3.7'
 
 services:
-  application:
+  app:
     build: .
     volumes:
-      - .:/app:delegated
+      - ./:/var/www
     ports:
       - "8000:8000"
     depends_on:
-      - database
+      - db
+    container_name: task-manager-app
     command: ["make", "start-app"]
 
-  frontend:
+  web:
     build: .
     volumes:
-      - .:/app:delegated
+      - ./:/var/www
     command: ["make", "start-frontend"]
     depends_on:
-      - application
+      - app
+    container_name: task-manager-web
 
-  database:
+  db:
     image: postgres:16.2-alpine
     restart: always
     environment:
@@ -28,15 +30,16 @@ services:
       - "5432:5432"
     volumes:
       - task-manager-pgdata:/var/lib/postgresql/data
+    container_name: task-manager-db
 
   adminer:
     image: adminer:latest
     ports:
       - "8080:8080"
     depends_on:
-      - database
+      - db
     environment:
-      ADMINER_DEFAULT_SERVER: database
+      ADMINER_DEFAULT_SERVER: db
 
 volumes:
   task-manager-pgdata:
