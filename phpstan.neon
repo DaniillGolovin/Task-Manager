@@ -1,23 +1,21 @@
+includes:
+    - ./vendor/larastan/larastan/extension.neon
+
 parameters:
-  level: 4
   paths:
     - app
+    - database
+    - config
+    - resources
     - routes
     - tests
 
-  excludePaths:
-    - routes/console.php
-    - routes/channels.php
-    - app/Http/Middleware/Authenticate.php
-    - app/Http/Middleware/RedirectIfAuthenticated.php
-    - app/Exceptions/Handler.php
-    - app/Providers/RouteServiceProvider.php
+  # The level 9 is the highest level
+  level: 5
 
-  reportUnmatchedIgnoredErrors: false
+  excludePaths:
+    - vendor/*
+    - app/Http/Controllers/Auth/*
+    - routes/console.php
 
   ignoreErrors:
-   - '#Call to an undefined method Illuminate\\Http\\Client\\Response::#'
-   - '#Call to an undefined method Illuminate\\Database\\Query\\Builder::#'
-   - '#Cannot access offset [\S]+ on array\(#'
-   - '#Parameter \#1 \$message of function flash expects string\|null, array\|string\|null given.#'
-   - identifier: missingType.iterableValue
