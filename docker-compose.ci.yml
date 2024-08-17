@@ -1,20 +1,22 @@
 version: '3.7'
 
 services:
-  application:
-    build: .
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
     volumes:
-      - .:/app
+      - ./:/var/www
     depends_on:
-      - database
+      - db
     environment:
       DB_CONNECTION: pgsql
-      DB_HOST: database
+      DB_HOST: db
       DB_DATABASE: postgres
       DB_USERNAME: postgres
-    command: ["make", "lint", "test-coverage"]
+    command: ["make", "test-coverage", "analyse", "lint"]
 
-  database:
+  db:
     image: postgres:16.2-alpine
     environment:
       POSTGRES_HOST_AUTH_METHOD: trust

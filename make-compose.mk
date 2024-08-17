@@ -64,11 +64,11 @@ compose-check:
 
 ci:
 	docker compose -f docker-compose.ci.yml -p task-manager build ${BUILD_ARGS}
-	docker compose -f docker-compose.ci.yml -p task-manager run --rm application make setup
+	docker compose -f docker-compose.ci.yml -p task-manager run --rm app make setup
 	docker compose -f docker-compose.ci.yml -p task-manager up --abort-on-container-exit
 	docker compose -f docker-compose.ci.yml -p task-manager down -v --remove-orphans
 
 ci-solutions:
 	docker compose -f docker-compose.ci.yml -p task-manager build ${BUILD_ARGS}
-	docker compose -f docker-compose.ci.yml -p task-manager run --rm application make install-app test-solutions
+	docker compose -f docker-compose.ci.yml -p task-manager run --rm app make install-app test-solutions
 	docker compose -f docker-compose.ci.yml -p task-manager down -v --remove-orphans
