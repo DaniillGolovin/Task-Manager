@@ -38,10 +38,10 @@ compose-app-install:
 compose-web-install:
 	docker compose run --rm web make install-frontend
 
-compose-database-start:
+compose-db-start:
 	docker compose up --build -d db
 
-compose-database-stop:
+compose-db-stop:
 	docker compose stop db
 
 compose-db-prepare:

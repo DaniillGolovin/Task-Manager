@@ -23,7 +23,10 @@ start-frontend:
 	npm run dev
 
 db-prepare:
-	php artisan migrate:fresh --force --seed
+	php artisan migrate
+
+seed:
+	php artisan db:seed
 
 lint-fix:
 	composer exec phpcbf -v

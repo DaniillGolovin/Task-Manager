@@ -7,19 +7,21 @@ services:
       - ./:/var/www
     ports:
       - "8000:8000"
+    command: ["make", "start-app"]
     depends_on:
       - db
     container_name: task-manager-app
-    command: ["make", "start-app"]
 
-  web:
-    build: .
-    volumes:
-      - ./:/var/www
-    command: ["make", "start-frontend"]
-    depends_on:
-      - app
-    container_name: task-manager-web
+#  web:
+#    build: .
+#    volumes:
+#      - ./:/var/www
+#    ports:
+#        - "5173:5173"
+#    command: ["make", "start-frontend"]
+#    depends_on:
+#      - app
+#    container_name: task-manager-web
 
   db:
     image: postgres:16.2-alpine
