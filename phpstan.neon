@@ -19,3 +19,4 @@ parameters:
     - routes/console.php
 
   ignoreErrors:
+    - '/is not covariant with PHPDoc type/'
