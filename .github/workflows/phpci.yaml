@@ -49,11 +49,11 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           file: build/logs/clover.xml
 
-      - name: Publish code coverage
+      - name: Code Climate Coverage Action
         uses: paambaati/codeclimate-action@v8.0.0
         env:
-          CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
           coverageCommand: make test-coverage
-          coverageLocations: ${{github.workspace}}/build/logs/clover.xml:clover
+          coverageLocations: ${{github.workplace}}/build/logs/clover.xml:clover
           debug: true

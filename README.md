@@ -1,6 +1,6 @@
 # Task Manager
 
-[![codecov](https://codecov.io/github/DaniillGolovin/php-laravel-developer-project-57/graph/badge.svg?token=WHVL3OC2JT)](https://codecov.io/github/DaniillGolovin/php-laravel-developer-project-57)
+[![codecov](https://codecov.io/gh/DaniillGolovin/Task-Manager/graph/badge.svg?token=WHVL3OC2JT)](https://codecov.io/gh/DaniillGolovin/Task-Manager)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/900f3c4c6c2c37d352cd/maintainability)](https://codeclimate.com/github/DaniillGolovin/Task-Manager/maintainability)
 
