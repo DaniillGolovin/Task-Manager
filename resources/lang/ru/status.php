@@ -13,6 +13,7 @@ return [
     'Date of creation' => 'Дата создания',
     'Actions' => 'Действия',
     'Apply' => 'Применить',
+    'Status ":name" has been added successfully' => 'Статус ":name" успешно добавлен',
     'Status has been added successfully' => 'Статус успешно создан',
     'Status has been updated successfully' => 'Статус успешно изменён',
     'Status has been deleted successfully' => 'Статус успешно удалён',
