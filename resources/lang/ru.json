@@ -46,5 +46,14 @@
     "Unauthorized": "Не авторизован",
     "Verify Email Address": "Подтвердить адрес электронной почты",
     "Whoops!": "Упс!",
-    "You are receiving this email because we received a password reset request for your account.": "Вы получили это письмо, потому что мы получили запрос на сброс пароля для Вашей учётной записи."
+    "You are receiving this email because we received a password reset request for your account.": "Вы получили это письмо, потому что мы получили запрос на сброс пароля для Вашей учётной записи.",
+    "Already registered?": "Уже зарегистрированы?",
+    "Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.": "Забыли свой пароль? Не беда. Просто сообщите нам свой адрес электронной почты, и мы вышлем вам по электронной почте ссылку для сброса пароля, которая позволит вам установить новый.",
+    "Email": "Email",
+    "Confirm Password": "Подтверждение пароля",
+    "Password": "Пароль",
+    "Name": "Имя",
+    "Remember me": "Запомнить меня",
+    "Log in": "Войти",
+    "Email Password Reset Link": "Отправить ссылку для сброса пароля"
 }
