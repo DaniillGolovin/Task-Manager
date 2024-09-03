@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\TaskStatus;
+use App\Models\TaskStatus as Status;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -21,7 +21,7 @@ class TaskStatusSeeder extends Seeder
         ];
 
         foreach ($statuses as $status) {
-            TaskStatus::factory([])->create([
+            Status::factory([])->create([
                 'name' => $status,
             ]);
         }

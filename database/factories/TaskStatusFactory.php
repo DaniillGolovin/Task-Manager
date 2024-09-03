@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\TaskStatus;
+use App\Models\TaskStatus as Status;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -15,7 +15,7 @@ class TaskStatusFactory extends Factory
      *
      * @var class-string<\Illuminate\Database\Eloquent\Model>
      */
-    protected $model = TaskStatus::class;
+    protected $model = Status::class;
 
     /**
      * Define the model's default state.
@@ -25,7 +25,7 @@ class TaskStatusFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->unique()->word(),
+            'name' => fake()->unique()->name(),
         ];
     }
 }
