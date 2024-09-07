@@ -8,7 +8,6 @@ use Tests\TestCase;
 
 class TaskStatusControllerTest extends TestCase
 {
-    //TODO: проверить запуск тестов линтеров и CI
     protected $status;
     protected $goodData;
     protected $badData;
