@@ -12,7 +12,14 @@ class TaskStatus extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $fillable = ['name'];
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'name',
+    ];
 
     public function tasks(): HasMany
     {

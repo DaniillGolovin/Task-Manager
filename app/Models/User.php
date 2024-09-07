@@ -50,4 +50,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Task::class, 'assigned_to_id');
     }
+
+    public function creator(): HasOne
+    {
+        return $this->hasOne(Task::class, 'created_by_id');
+    }
 }

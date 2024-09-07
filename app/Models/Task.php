@@ -12,7 +12,18 @@ class Task extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $fillable = ['name', 'description', 'status_id', 'creator_by_id', 'assigned_to_id'];
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'name',
+        'description',
+        'status_id',
+        'created_by_id',
+        'assigned_to_id',
+    ];
 
     public function status(): BelongsTo
     {
@@ -21,7 +32,7 @@ class Task extends Model
 
     public function creator(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'creator_by_id');
+        return $this->belongsTo(User::class, 'created_by_id');
     }
 
     public function executor(): BelongsTo
