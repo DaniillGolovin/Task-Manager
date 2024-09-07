@@ -79,8 +79,13 @@ class TaskStatusController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Status $status, Request $request): RedirectResponse
+    public function destroy(Status $status): RedirectResponse
     {
+        if ($status->tasks()->exists()) {
+            flash(__('status.Failed to delete status'))->error();
+            return back();
+        }
+
         $status->delete();
 
         flash(__('status.Status has been deleted successfully'))->success();
