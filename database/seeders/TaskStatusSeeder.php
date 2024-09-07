@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\TaskStatus as Status;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class TaskStatusSeeder extends Seeder
@@ -14,10 +13,10 @@ class TaskStatusSeeder extends Seeder
     public function run(): void
     {
         $statuses = [
-            'новый',
+            'новая',
             'в работе',
             'на тестировании',
-            'завершен',
+            'завершена',
         ];
 
         foreach ($statuses as $status) {
