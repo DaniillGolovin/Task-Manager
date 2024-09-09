@@ -1,23 +1,23 @@
-FROM php:8.2-cli
+# syntax = edrevo/dockerfile-plus
 
-RUN apt-get update && apt-get install -y \
-    libpq-dev \
-    libzip-dev
-RUN docker-php-ext-install pdo pdo_pgsql zip
+INCLUDE+ Dockerfile.dev
 
+ENV PORT=80
 
-RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
-    && php composer-setup.php --install-dir=/usr/local/bin --filename=composer \
-    && php -r "unlink('composer-setup.php');"
+COPY composer.json composer.lock ./
 
-RUN curl -sL https://deb.nodesource.com/setup_20.x | bash -
-RUN apt-get install -y nodejs
+RUN composer install --prefer-dist --no-scripts --no-dev --no-autoloader
 
-WORKDIR /var/www/
+COPY package.json package-lock.json ./
+
+RUN npm ci
 
 COPY . .
-RUN composer install
-RUN npm ci
+
+RUN composer dump-autoload --no-dev --optimize
+
 RUN npm run build
 
 CMD ["bash", "-c", "make db-prepare start-app"]
+
+EXPOSE ${PORT}
