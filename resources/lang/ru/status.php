@@ -17,7 +17,7 @@ return [
     'Status has been added successfully' => 'Статус успешно создан',
     'Status has been updated successfully' => 'Статус успешно изменён',
     'Status has been deleted successfully' => 'Статус успешно удалён',
-    'Failed to delete status' => 'Не удалось удалить статус',
+    'Failed to delete status' => 'Не удалось удалить статус, так как он привязан к задаче',
     'Description' => 'Описание',
     'Are you sure?' => 'Вы уверены?',
 ];
