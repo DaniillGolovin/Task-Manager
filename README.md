@@ -1,8 +1,8 @@
 # Task Manager
 
-[![codecov](https://codecov.io/gh/DaniillGolovin/Task-Manager/graph/badge.svg?token=WHVL3OC2JT)](https://codecov.io/gh/DaniillGolovin/Task-Manager)
+[![PHP CI](https://github.com/DaniillGolovin/Task-Manager/actions/workflows/main.yaml/badge.svg)](https://github.com/DaniillGolovin/Task-Manager/actions/workflows/main.yaml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/900f3c4c6c2c37d352cd/maintainability)](https://codeclimate.com/github/DaniillGolovin/Task-Manager/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/900f3c4c6c2c37d352cd/test_coverage)](https://codeclimate.com/github/DaniillGolovin/Task-Manager/test_coverage)
+[![codecov](https://codecov.io/gh/DaniillGolovin/Task-Manager/graph/badge.svg?token=WHVL3OC2JT)](https://codecov.io/gh/DaniillGolovin/Task-Manager)
 [![Visit Website](https://img.shields.io/badge/Visit%20Website-Click%20Here-brightgreen)](http://213.171.6.21:8000)
 
 ## Установка
