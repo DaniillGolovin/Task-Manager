@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         View::composer(
-            ['tasks.edit', 'tasks.create'],
+            ['tasks.edit', 'tasks.create', 'tasks.index'],
             TaskComposer::class
         );
     }

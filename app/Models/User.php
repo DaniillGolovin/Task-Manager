@@ -55,4 +55,17 @@ class User extends Authenticatable
     {
         return $this->hasOne(Task::class, 'created_by_id');
     }
+
+    /**
+     * Scopes
+     */
+    public function scopeAssignedToTasks($query)
+    {
+        return $query->whereHas('executor');
+    }
+
+    public function scopeCreatorOfTheTasks($query)
+    {
+        return $query->whereHas('creator');
+    }
 }

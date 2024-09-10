@@ -7,6 +7,8 @@ use App\Models\Task;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
+use Spatie\QueryBuilder\AllowedFilter;
+use Spatie\QueryBuilder\QueryBuilder;
 
 class TaskController extends Controller
 {
@@ -24,7 +26,15 @@ class TaskController extends Controller
      */
     public function index(): View
     {
-        $tasks = Task::latest()->paginate(15);
+        $tasks = QueryBuilder::for(Task::class)
+            ->latest()
+            ->allowedFilters([
+                AllowedFilter::exact('status_id'),
+                AllowedFilter::exact('created_by_id'),
+                AllowedFilter::exact('assigned_to_id'),
+            ])
+            ->paginate(15)
+            ->appends(request()->query());
 
         return view('tasks.index', compact('tasks'));
     }

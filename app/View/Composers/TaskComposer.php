@@ -14,9 +14,16 @@ class TaskComposer
         $statuses = Status::pluck('name', 'id');
         $users = User::pluck('name', 'id');
         $labels = Label::pluck('name', 'id');
+        $executors = User::assignedToTasks()->orderBy('name')->pluck('name', 'id');
+        $creators = User::creatorOfTheTasks()->orderBy('name')->pluck('name', 'id');
+
+        $filter = request()->has('filter') ? request()->query->all()['filter'] : null;
 
         $view->with('statuses', $statuses);
         $view->with('users', $users);
         $view->with('labels', $labels);
+        $view->with('executors', $executors);
+        $view->with('creators', $creators);
+        $view->with('filter', $filter);
     }
 }
