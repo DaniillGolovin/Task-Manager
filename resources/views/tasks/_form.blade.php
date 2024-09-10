@@ -20,6 +20,6 @@
     {!! Html::select('assigned_to_id', $users, $task->assigned_to_id)->class('rounded border-gray-300 w-full')->placeholder(__('---------')) !!}
 </div>
 <div>
-    {{-- {!! Html::label(__('tasks.Labels'), 'labels')->class('block text-gray-700 font-bold mb-2') !!}--}}
-    {{-- {!! Html::select('labels_id', $labels)->class('rounded border-gray-300 w-full h-32') !!} --}}
+     {!! Html::label(__('tasks.Labels'), 'labels[]')->class('block text-gray-700 font-bold mb-2') !!}
+     {!! Html::select('labels[]', $labels)->class('rounded border-gray-300 w-full')->placeholder(__('---------'))->multiple()!!}
 </div>

@@ -31,35 +31,37 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach ($tasks as $task)
-                    <tr class="border-b border-dashed">
-                        <td class="p-2">{{ $task->id }}</td>
-                        <td class="p-2">{{ $task->status->name }}</td>
-                        <td class="p-2">
-                            <a class="text-blue-600 hover:text-blue-900"
-                               href="{{ route('tasks.show', $task->id) }}">
-                                {{ $task->name }}
-                            </a>
-                        </td>
-                        <td class="p-2">{{ $task->creator->name }}</td>
-                        <td class="p-2">{{ $task->executor->name ?? 'Не указано' }}</td>
-                        <td class="p-2">{{ $task->created_at->format('d.m.Y') }}</td>
-                        @auth
+                @if ($tasks)
+                    @foreach ($tasks as $task)
+                        <tr class="border-b border-dashed">
+                            <td class="p-2">{{ $task->id }}</td>
+                            <td class="p-2">{{ $task->status->name }}</td>
                             <td class="p-2">
-                                @can('update', $task)
-                                    <a href="{{ route('tasks.edit', $task->id) }}" class="text-blue-600 hover:text-blue-900">
-                                        {{ __('tasks.Edit') }}
-                                    </a>
-                                @endcan
-                                @can('delete', $task)
-                                    <a data-confirm="Вы уверены?" data-method="delete" rel="nofollow" href="{{ route('tasks.destroy', $task->id) }}" class="text-red-600 hover:text-red-900">
-                                        {{ __('tasks.Delete') }}
-                                    </a>
-                                @endcan
+                                <a class="text-blue-600 hover:text-blue-900"
+                                   href="{{ route('tasks.show', $task->id) }}">
+                                    {{ $task->name }}
+                                </a>
                             </td>
-                        @endauth
-                    </tr>
-                @endforeach
+                            <td class="p-2">{{ $task->creator->name }}</td>
+                            <td class="p-2">{{ $task->executor->name ?? 'Не указано' }}</td>
+                            <td class="p-2">{{ $task->created_at->format('d.m.Y') }}</td>
+                            @auth
+                                <td class="p-2">
+                                    @can('update', $task)
+                                        <a href="{{ route('tasks.edit', $task->id) }}" class="text-blue-600 hover:text-blue-900">
+                                            {{ __('tasks.Edit') }}
+                                        </a>
+                                    @endcan
+                                    @can('delete', $task)
+                                        <a data-confirm="Вы уверены?" data-method="delete" rel="nofollow" href="{{ route('tasks.destroy', $task->id) }}" class="text-red-600 hover:text-red-900">
+                                            {{ __('tasks.Delete') }}
+                                        </a>
+                                    @endcan
+                                </td>
+                            @endauth
+                        </tr>
+                    @endforeach
+                @endif
                 </tbody>
             </table>
         </div>
