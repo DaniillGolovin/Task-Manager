@@ -14,6 +14,7 @@
                 </div>
             @endauth
         </div>
+        @include('tasks._filter')
         @include('flash::message')
         <div class="overflow-x-auto">
             <table class="w-full mt-4 border-collapse">
