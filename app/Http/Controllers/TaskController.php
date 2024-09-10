@@ -46,6 +46,7 @@ class TaskController extends Controller
     {
         $task = DB::transaction(function () use ($request): Task {
             $task = $request->user()->creator()->create($request->validated());
+            $task->labels()->sync($request->labels);
 
             return $task;
         });
@@ -78,6 +79,7 @@ class TaskController extends Controller
     {
         $task = DB::transaction(function () use ($task, $request): Task {
             $task->update($request->validated());
+            $task->labels()->sync($request->labels);
 
             return $task;
         });
