@@ -1,11 +1,11 @@
 <div>
     {!! Html::label(__('tasks.Task name'), 'name')->class('block text-gray-700 font-bold mb-2') !!}
-    @if ($errors->has('name'))
-        <div class="invalid-feedback d-block">
-            <strong>{{ $errors->first('name') }}</strong>
-        </div>
-    @endif
     {!! Html::text('name', $task->name ?? '')->class('rounded border-gray-300 w-full')->placeholder(__('tasks.Enter the name of the task')) !!}
+    @error('name')
+    <div class="invalid-feedback d-block">
+        <strong>{{ $message }}</strong>
+    </div>
+    @enderror
 </div>
 <div>
     {!! Html::label(__('tasks.Description'), 'description')->class('block text-gray-700 font-bold mb-2') !!}

@@ -7,6 +7,7 @@
             <h1 class="text-3xl font-bold mb-5 flex items-center">{{ __('tasks.Create task') }}</h1>
         </div>
         <div class="grid grid-cols-1">
+
             {!! Html::form('POST', route('tasks.store'))->class('w-full max-w-2xl mx-auto')->open() !!}
             <div class="flex flex-col space-y-4">
                 @include('tasks._form')
@@ -15,6 +16,7 @@
                 </div>
             </div>
             {!! Html::form()->close() !!}
+
         </div>
     </div>
 </section>
