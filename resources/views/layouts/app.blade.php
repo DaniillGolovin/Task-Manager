@@ -18,12 +18,13 @@
     <body>
         <div id="app">
             <header class="fixed-top w-100">
-                <div class="container">
+{{--                <div class="container">--}}
                     @include('layouts.navigation')
-                </div>
+{{--                </div>--}}
             </header>
 
             <!-- Page Content -->
             @yield('content')
+        </div>
     </body>
 </html>

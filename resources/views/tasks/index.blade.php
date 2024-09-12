@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="bg-white dark:bg-gray-900 min-h-screen">
+<section class="bg-white white:bg-gray-900 min-h-screen">
     <div class="max-w-screen-xl px-4 mx-auto pt-20 pb-8 lg:py-16 lg:pt-28">
         <div class="flex flex-col lg:flex-row justify-between items-center mb-5">
             <h1 class="text-3xl font-bold mb-5 flex items-center">{{ __('tasks.Tasks') }}</h1>
@@ -14,8 +14,8 @@
                 </div>
             @endauth
         </div>
-        @include('tasks._filter')
         @include('flash::message')
+        @include('tasks._filter')
         <div class="overflow-x-auto">
             <table class="w-full mt-4 border-collapse">
                 <thead class="border-b-2 border-solid border-black text-left">
@@ -54,7 +54,7 @@
                                         </a>
                                     @endcan
                                     @can('delete', $task)
-                                        <a data-confirm="Вы уверены?" data-method="delete" rel="nofollow" href="{{ route('tasks.destroy', $task->id) }}" class="text-red-600 hover:text-red-900">
+                                        <a data-confirm="{{ __('tasks.Are you sure?') }}" data-method="delete" rel="nofollow" href="{{ route('tasks.destroy', $task->id) }}" class="text-red-600 hover:text-red-900">
                                             {{ __('tasks.Delete') }}
                                         </a>
                                     @endcan
@@ -67,7 +67,7 @@
             </table>
         </div>
         <div class="mt-4">
-            {{ $tasks->links() }}
+            {{ $tasks->links('pagination::tailwind') }}
         </div>
     </div>
 </section>

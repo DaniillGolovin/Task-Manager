@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="bg-white dark:bg-gray-900 min-h-screen">
+<section class="bg-white white:bg-gray-900 min-h-screen">
     <div class="max-w-screen-xl px-4 mx-auto pt-20 pb-8 lg:py-16 lg:pt-28">
         <div class="flex flex-col lg:flex-row justify-between items-center mb-5">
             <h1 class="text-3xl font-bold mb-5 flex items-center">{{ __('labels.Labels') }}</h1>
@@ -45,7 +45,7 @@
                                         </a>
                                     @endcan
                                     @can('delete', $label)
-                                        <a data-confirm="Вы уверены?" data-method="delete"
+                                        <a data-confirm="{{ __('labels.Are you sure?') }}" data-method="delete"
                                            class="text-red-600 hover:text-red-900" rel="nofollow"
                                            href="{{ route('labels.destroy', $label->id) }}">
                                             {{ __('labels.Delete') }}
