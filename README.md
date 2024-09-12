@@ -3,7 +3,7 @@
 [![PHP CI](https://github.com/DaniillGolovin/Task-Manager/actions/workflows/main.yaml/badge.svg)](https://github.com/DaniillGolovin/Task-Manager/actions/workflows/main.yaml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/900f3c4c6c2c37d352cd/maintainability)](https://codeclimate.com/github/DaniillGolovin/Task-Manager/maintainability)
 [![codecov](https://codecov.io/gh/DaniillGolovin/Task-Manager/graph/badge.svg?token=WHVL3OC2JT)](https://codecov.io/gh/DaniillGolovin/Task-Manager)
-[![Visit Website](https://img.shields.io/badge/Visit%20Website-Click%20Here-brightgreen)](http://213.171.6.21:8000)
+[![Visit Website](https://img.shields.io/badge/Visit%20Website-Click%20Here-brightgreen)](http://85.234.107.131/)
 
 ## Установка
 
