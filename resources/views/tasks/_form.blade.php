@@ -21,5 +21,5 @@
 </div>
 <div>
      {!! Html::label(__('tasks.Labels'), 'labels[]')->class('block text-gray-700 font-bold mb-2') !!}
-     {!! Html::select('labels[]', $labels)->class('rounded border-gray-300 w-full')->placeholder(__('---------'))->multiple()!!}
+     {!! Html::select('labels[]', $labels)->class('rounded border-gray-300 w-full')->multiple()!!}
 </div>
