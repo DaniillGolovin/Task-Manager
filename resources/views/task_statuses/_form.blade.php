@@ -3,7 +3,7 @@
     <div class="mt-2">
         {!! Html::text('name', $status->name ?? '')->class('rounded border-gray-300 w-1/3') !!}
         @error('name')
-        <div class="invalid-feedback d-block">
+        <div class="text-red-500">
             <strong>{{ $message }}</strong>
         </div>
         @enderror

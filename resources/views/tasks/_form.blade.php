@@ -2,7 +2,7 @@
     {!! Html::label(__('tasks.Task name'), 'name')->class('block text-gray-700 font-bold mb-2') !!}
     {!! Html::text('name', $task->name ?? '')->class('rounded border-gray-300 w-full')->placeholder(__('tasks.Enter the name of the task')) !!}
     @error('name')
-    <div class="invalid-feedback d-block">
+    <div class="text-red-500">
         <strong>{{ $message }}</strong>
     </div>
     @enderror
