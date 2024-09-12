@@ -1,6 +1,4 @@
 import './bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../css/app.css';
 
 import Alpine from 'alpinejs';
@@ -9,6 +7,6 @@ window.Alpine = Alpine;
 
 Alpine.start();
 
-import Rails from '@rails/ujs';
-
-Rails.start();
+// import Rails from '@rails/ujs';
+//
+// Rails.start();
